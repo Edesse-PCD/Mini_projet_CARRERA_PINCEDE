@@ -65,7 +65,7 @@ public class Cellule {
                 
             }
                  }
-                 return("  "); //Permet d'assurer à mon programme qu'il retourne que to string retourne quelque chose quoi qu'il arrive même si ce return ne sera pas utilisé
+                 return("  "); //Permet d'assurer à mon programme que to string retourne quelque chose quoi qu'il arrive même si ce return ne sera pas utilisé
     }
 }
                  
