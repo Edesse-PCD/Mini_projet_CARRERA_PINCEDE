@@ -27,8 +27,9 @@ public class Cellule {
     }
     
     
-    public  void placerBombe(){
-        presenceBombe=true;
+    public  boolean placerBombe(){
+         presenceBombe=true;
+                return(true);
         
     }
     

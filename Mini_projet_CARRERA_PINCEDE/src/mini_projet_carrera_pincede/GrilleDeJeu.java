@@ -24,7 +24,6 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     public int getNbLignes() {
         return nbLignes;
     }
-
     public int getNbColonnes() {
         return nbColonnes;
     }
@@ -32,18 +31,16 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     public int getNbBombes() {
         return nbBombes;
     }
-public void placerBombesAleatoirement() {
+public void placerBombesAleatoirement(){
     Random random = new Random();
-    int bombesPlacees = 0;
-
-    while (bombesPlacees < nbBombes) {
-        int i = random.nextInt(nbLignes);
-        int j = random.nextInt(nbColonnes);
-
-        if (!matriceCellules[i][j].presenceBombe()) {
-            matriceCellules[i][j].placerBombe();
-            bombesPlacees++;
-        }
+    for (int k =1; k <=nbBombes;k++){
+    
+    int i = random.nextInt();
+    int j = random.nextInt();
+    if (matriceCellules[i][j].isPresenceBombe()) matriceCellules[i][j].placerBombe();
     }
+            }
+    
 }
+    
 }
