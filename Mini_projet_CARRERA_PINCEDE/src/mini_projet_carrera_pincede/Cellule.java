@@ -70,7 +70,6 @@ public class Cellule {
        nbBombesAdjacentes+=1;
        }
 }
-    
              
         
     

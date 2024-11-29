@@ -44,11 +44,6 @@ public void placerBombesAleatoirement(){
    matriceCellules[i][j].placerBombe();
     }
 }
-
-    
-    
-}
-
 public void calculerBombesAdjacentes() {
     for (int i =1;i<nbLignes-2;i++){
         for (int j=1;j<nbColonnes-2;j++)
