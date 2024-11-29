@@ -42,13 +42,13 @@ public class Cellule {
     @Override
     public String toString() {
         if (revelerCellule()==false){
-            return('? ');
+            return("? ");
              if (revelerCellule()==true){
-            return('B ');
+            return("B ");
         
         if (revelerCellule==true && presenceBombe()==false && NbBombesAdjacentes>0){
             for (int i =1;i<=8;i++){
-                if NbBombesAdjacentes== i;
+                if (NbBombesAdjacentes== i){
                 return(i);
             }
         } 
