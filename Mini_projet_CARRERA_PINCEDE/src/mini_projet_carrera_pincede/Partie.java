@@ -4,6 +4,7 @@
  */
 package mini_projet_carrera_pincede;
 
+
 /**
  *
  * @author Edess
@@ -11,7 +12,9 @@ package mini_projet_carrera_pincede;
 public class Partie {
     GrilleDeJeu grille ;
     public void initialiserPartie(){
-        
+      GrilleDeJeu  grille = new GrilleDeJeu(10,10,2);
+      grille.placerBombesAleatoirement();
+      
     }
     
 }
