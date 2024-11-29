@@ -37,6 +37,4 @@ public class Cellule {
     public String toString() {
         if (revelerCellule()==false) return "?";
     }
-    
-    
 }
