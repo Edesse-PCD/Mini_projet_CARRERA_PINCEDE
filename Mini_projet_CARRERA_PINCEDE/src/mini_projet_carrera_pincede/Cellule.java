@@ -14,7 +14,6 @@ public class Cellule {
     private boolean devoilee;
     private int nbBombesAdjacentes;
 
-
     public boolean isPresenceBombe() {
         return presenceBombe;
     }
@@ -28,8 +27,9 @@ public class Cellule {
     }
     
     
-    public  void placerBombe(){
-        presenceBombe=true;
+    public  boolean placerBombe(){
+         presenceBombe=true;
+                return(true);
         
     }
     
@@ -56,7 +56,6 @@ public class Cellule {
                 }
               
             }
-            }
                  if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes==0){
             for (int i =1;i<=8;i++){
                 if (nbBombesAdjacentes== i){
@@ -65,14 +64,24 @@ public class Cellule {
                 
         }
         }
-                 return("  ");
-     
-        
     
-        public int IncrementerNbBombesAdj(int i,int j){
+        }
+            return("  ");
+    }
+     
+
+    
+         public void IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
 }
+             
+        
     
+
+             
+        
     
-    
+
+
+   
