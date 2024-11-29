@@ -63,12 +63,16 @@ public class Cellule {
             return("  ");
                 }
                 
-            }
-                 }
-                 return("  "); //Permet d'assurer à mon programme que to string retourne quelque chose quoi qu'il arrive même si ce return ne sera pas utilisé
-    }
+        }
+        }
+                 return("  ");
+     
+        
+    
+        public int IncrementerNbBombesAdj(int i,int j){
+       nbBombesAdjacentes+=1;
+       }
 }
-                 
     
     
     
