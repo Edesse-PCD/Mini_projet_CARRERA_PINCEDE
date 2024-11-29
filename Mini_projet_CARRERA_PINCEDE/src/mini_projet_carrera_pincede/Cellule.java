@@ -32,17 +32,35 @@ public class Cellule {
         
     }
     
-    public  void revelerCellule(){
+    public  boolean revelerCellule(){
         devoilee=true;
+        return(devoilee);
        
     }
     
 
     @Override
     public String toString() {
-        if 
+        if (revelerCellule()==false){
+            return('? ');
+             if (revelerCellule()==true){
+            return('B ');
         
-    }
-}
+        if (revelerCellule==true && presenceBombe()==false && NbBombesAdjacentes>0){
+            for (int i =1;i<=8;i++){
+                if NbBombesAdjacentes== i;
+                return(i);
+            }
+        } 
+        }
+            
+           
+        
+            
+        
+        
+        
+    
+
 
    
