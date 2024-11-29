@@ -32,4 +32,18 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     public int getNbBombes() {
         return nbBombes;
     }
+public void placerBombesAleatoirement() {
+    Random random = new Random();
+    int bombesPlacees = 0;
+
+    while (bombesPlacees < nbBombes) {
+        int i = random.nextInt(nbLignes);
+        int j = random.nextInt(nbColonnes);
+
+        if (!matriceCellules[i][j].presenceBombe()) {
+            matriceCellules[i][j].placerBombe();
+            bombesPlacees++;
+        }
+    }
+}
 }
