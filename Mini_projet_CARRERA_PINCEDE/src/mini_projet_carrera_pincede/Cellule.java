@@ -21,6 +21,10 @@ public class Cellule {
     public int getNbBombesAdjacentes() {
         return nbBombesAdjacentes;
     }
+
+    public void setNbBombesAdjacentes(int nbBombesAdjacentes) {
+        this.nbBombesAdjacentes = nbBombesAdjacentes;
+    }
     
     
     public  void placerBombe(){
@@ -32,11 +36,13 @@ public class Cellule {
         devoilee=true;
        
     }
+    
 
     @Override
     public String toString() {
-        if (revelerCellule()==false) return "?";
+        if 
+        
     }
-    
-    
 }
+
+   
