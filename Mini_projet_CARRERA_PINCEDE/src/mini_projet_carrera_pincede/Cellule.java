@@ -42,23 +42,33 @@ public class Cellule {
     @Override
     public String toString() {
         if (revelerCellule()==false){
-            return("? ");
-             if (revelerCellule()==true){
-            return("B ");
-        
-        if (revelerCellule==true && presenceBombe()==false && NbBombesAdjacentes>0){
-            for (int i =1;i<=8;i++){
-                if (NbBombesAdjacentes== i){
-                return(i);
-            }
-        } 
+            return("?");
         }
-            
-           
+             if (revelerCellule() && presenceBombe ==true){
+            return("B");
+             }
+             
+            if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes>0){
+            for (int i =1;i<=8;i++){
+                if (nbBombesAdjacentes== i){
+            return("  "+i);
+                }
+              
+            }
+                 if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes==0){
+            for (int i =1;i<=8;i++){
+                if (nbBombesAdjacentes== i){
+            return("  ");
+                }
+        }
+        }
+        }
+    
+             
         
-            
-        
-        
+    
+
+             
         
     
 
