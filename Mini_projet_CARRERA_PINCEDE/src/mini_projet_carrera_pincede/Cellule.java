@@ -14,6 +14,7 @@ public class Cellule {
     private boolean devoilee;
     private int nbBombesAdjacentes;
 
+
     public boolean isPresenceBombe() {
         return presenceBombe;
     }
@@ -55,22 +56,19 @@ public class Cellule {
                 }
               
             }
+            }
                  if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes==0){
             for (int i =1;i<=8;i++){
                 if (nbBombesAdjacentes== i){
             return("  ");
                 }
-        }
-        }
-        }
+                
+            }
+                 }
+                 return("  "); //Permet d'assurer à mon programme qu'il retourne que to string retourne quelque chose quoi qu'il arrive même si ce return ne sera pas utilisé
+    }
+}
+                 
     
-             
-        
     
-
-             
-        
     
-
-
-   
