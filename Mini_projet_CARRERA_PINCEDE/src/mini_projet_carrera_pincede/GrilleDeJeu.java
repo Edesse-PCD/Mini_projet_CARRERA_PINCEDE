@@ -70,12 +70,8 @@ public void revelerCellule(int ligne, int colonne){
         for (int j = colonne-1;j<=ligne+1;j++){
             if (!matriceCellules[i][j].isPresenceBombe() && matriceCellules[i][j].getNbBombesAdjacentes()==0){
         matriceCellules[i][j].revelerCellule();
+            }
         }
     }
-    
-    
-    
-
-        }
 }
 }
