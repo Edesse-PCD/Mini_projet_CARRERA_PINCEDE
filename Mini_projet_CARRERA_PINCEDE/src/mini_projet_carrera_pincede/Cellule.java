@@ -40,6 +40,10 @@ public class Cellule {
     }
     
 
+    
+    
+    
+
     @Override
     public String toString() {
         if (revelerCellule()==false){
@@ -74,6 +78,13 @@ public class Cellule {
          public void IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
+
+ 
+public boolean getPresenceBombe(int i, int j) {
+
+    
+
+ 
 }
              
         
