@@ -64,7 +64,6 @@ public void calculerBombesAdjacentes() {
         if (matriceCellules[i+1][j+1].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
     }
 }
-
 }
 public void revelerCellule(int ligne, int colonne){
     for ( int i = ligne-1;i<=ligne+1;i++){
