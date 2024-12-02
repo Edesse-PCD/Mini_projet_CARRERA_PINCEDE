@@ -61,18 +61,20 @@ public class Cellule {
                 if (nbBombesAdjacentes== i){
             return("  ");
                 }
+                
         }
-        }
-     return("  ");
         }
     
+        }
+            return("  ");
     }
-}
+     
 
-  public int IncrementerNbBombesAdj(int i,int j){
+    
+         public void IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
-
+}
              
         
     
