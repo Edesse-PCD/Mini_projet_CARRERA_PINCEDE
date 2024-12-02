@@ -14,7 +14,9 @@ public class Mini_projet_CARRERA_PINCEDE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        if (!MatriceCellules[1][1].revelerCellule()){
+    GrilleDeJeu grille = new GrilleDeJeu(10,10,2);
+
+        
     
     }
     
