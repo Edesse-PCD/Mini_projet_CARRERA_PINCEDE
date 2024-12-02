@@ -72,7 +72,7 @@ public class Cellule {
   public int IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
-}
+
              
         
     
