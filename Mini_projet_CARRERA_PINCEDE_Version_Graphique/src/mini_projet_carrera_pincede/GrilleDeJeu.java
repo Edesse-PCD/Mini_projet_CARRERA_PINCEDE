@@ -57,4 +57,7 @@ public void calculerBombesAdjacentes() {
         if (matriceCellules[i+1][j].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
         if (matriceCellules[i+1][j+1].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
     }
+    }
+}
+}
 
