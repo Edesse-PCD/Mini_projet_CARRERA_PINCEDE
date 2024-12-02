@@ -48,7 +48,7 @@ public void calculerBombesAdjacentes() {
     for (int i =1;i<nbLignes-2;i++){
         for (int j=1;j<nbColonnes-2;j++)
     if (!matriceCellules[i][j].isPresenceBombe()){
-        if (matriceCellules[i-1][j-1].isPresenceBombe()) setnbBombesAdjacentes+=1;       
+        if (matriceCellules[i-1][j-1].isPresenceBombe())       
     }
 }
 
