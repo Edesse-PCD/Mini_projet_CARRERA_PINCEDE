@@ -63,10 +63,13 @@ public class Cellule {
                 }
         }
         }
-     
+     return("  ");
         }
+    
     }
-         public int IncrementerNbBombesAdj(int i,int j){
+}
+
+  public int IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
 }
