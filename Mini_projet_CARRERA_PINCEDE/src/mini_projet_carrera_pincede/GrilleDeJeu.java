@@ -64,8 +64,7 @@ public void revelerCellule(int ligne, int colonne){
     matriceCellules[ligne][colonne].revelerCellule();
     if (matriceCellules[ligne][colonne].isPresenceBombe()) System.out.println("Fin de la partie");
     if (matriceCellules[ligne][colonne].calculerBombesAdjacentes())
-    
-
-        }
+    }
 }
+
 
