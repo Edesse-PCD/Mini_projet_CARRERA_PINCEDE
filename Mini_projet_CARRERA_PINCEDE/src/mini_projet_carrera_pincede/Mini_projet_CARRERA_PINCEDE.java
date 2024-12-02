@@ -15,7 +15,6 @@ public class Mini_projet_CARRERA_PINCEDE {
      */
     public static void main(String[] args) {
         if (!MatriceCellules[1][1].revelerCellule()){
-    
+        }
     }
-    
 }
