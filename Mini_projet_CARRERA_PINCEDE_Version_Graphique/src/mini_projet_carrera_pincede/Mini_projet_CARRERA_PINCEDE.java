@@ -11,6 +11,7 @@ package mini_projet_carrera_pincede;
 public class Mini_projet_CARRERA_PINCEDE {
 
     /**
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
