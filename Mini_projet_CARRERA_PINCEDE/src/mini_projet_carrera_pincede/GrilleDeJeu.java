@@ -13,6 +13,10 @@ public class GrilleDeJeu {
     private int nbLignes;
     private int nbColonnes;
     private int nbBombes;
+    
+        public Cellule getCellAtCoord(int i,int j){
+        return(getMatriceCellules()[i][j]);
+        }
 
 public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     this.nbLignes = nbLignes;

@@ -15,9 +15,19 @@ public class Mini_projet_CARRERA_PINCEDE {
      */
     public static void main(String[] args) {
     GrilleDeJeu grille = new GrilleDeJeu(10,10,2);
+    int ligne =1;
+    int colonne=1;
+    if (!grille.getCellAtCoord(ligne,colonne).revelerCellule()){
+        if (grille.getCellAtCoord(ligne,colonne).isPresenceBombe()){
+       
+    
+        System.out.println("Erreur");
+    } else { 
+            grille.getCellAtCoord(ligne,colonne).revelerCellule();
+    
+    
+        }
 
-        
-    
     }
-    
-}
+    }
+    }
