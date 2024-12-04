@@ -14,9 +14,10 @@ public class GrilleDeJeu {
     private int nbColonnes;
     private int nbBombes;
     
-        public Cellule getCellAtCoord(int i,int j){
+        public Cellule cellAtCoord(int i,int j){
         return(getMatriceCellules()[i][j]);
         }
+        
 
 public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     this.nbLignes = nbLignes;
@@ -83,4 +84,27 @@ public void revelerCellule(int ligne, int colonne){
 
         }
 }
+
+public boolean getPresenceBombe(int i, int j) {
+if (cellAtCoord(i,j).isPresenceBombe()) return(true);
+else return(false);
 }
+
+
+public boolean toutesCellulesRevelees(){
+    boolean gagner = true;
+    for(int i =1; i<=nbLignes;i++){
+        for(int j=1;j<=nbColonnes;j++){
+           if (cellAtCoord(i,j).revelerCellule()) gagner = true;
+           else gagner = false;
+        }
+    }
+           return(gagner);
+}
+
+            
+        }
+    
+    
+
+
