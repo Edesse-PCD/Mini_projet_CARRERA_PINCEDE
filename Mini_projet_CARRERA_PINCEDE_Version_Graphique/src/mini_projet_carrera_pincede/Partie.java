@@ -11,8 +11,9 @@ package mini_projet_carrera_pincede;
  */
 public class Partie {
     GrilleDeJeu grille ;
+    int nbCoups;
     public void initialiserPartie(){
-      GrilleDeJeu  grille = new GrilleDeJeu(10,10,2);
+      GrilleDeJeu  grille = new GrilleDeJeu(10,10);
       grille.placerBombesAleatoirement();
       
     }

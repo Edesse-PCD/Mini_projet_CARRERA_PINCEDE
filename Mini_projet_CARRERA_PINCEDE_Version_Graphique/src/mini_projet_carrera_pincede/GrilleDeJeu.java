@@ -14,7 +14,7 @@ public class GrilleDeJeu {
     private int nbColonnes;
     private int nbBombes;
 
-public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
+public GrilleDeJeu(int nbLignes, int nbColonnes) {
     this.nbLignes = nbLignes;
     this.nbColonnes = nbColonnes;
     this.nbBombes = nbBombes;
