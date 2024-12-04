@@ -1,3 +1,5 @@
+package mini_projet_carrera_pincede;
+
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
