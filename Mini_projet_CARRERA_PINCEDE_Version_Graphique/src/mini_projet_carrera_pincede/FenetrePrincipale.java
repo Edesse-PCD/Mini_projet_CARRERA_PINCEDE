@@ -11,7 +11,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author valen
+ * @author Valentin
  */
 public class FenetrePrincipale extends javax.swing.JFrame {
 

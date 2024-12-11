@@ -6,7 +6,7 @@ package mini_projet_carrera_pincede;
 
 /**
  *
- * @author Edess
+ * @author Edesse
  */
 public class Cellule {
     
