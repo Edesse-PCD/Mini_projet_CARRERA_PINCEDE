@@ -4,10 +4,22 @@
  */
 package mini_projet_carrera_pincede;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Valentin
  */
-public class PionGraphique {
+public class PionGraphique extends Jbutton{
+    int x;
+    int y;
+    Cellule celluleAssociee;
+
+
+    public PionGraphique(int x, int y, Cellule celluleAssociee) {
+        this.x = x;
+        this.y = y;
+        this.celluleAssociee = celluleAssociee;
+    }
     
 }

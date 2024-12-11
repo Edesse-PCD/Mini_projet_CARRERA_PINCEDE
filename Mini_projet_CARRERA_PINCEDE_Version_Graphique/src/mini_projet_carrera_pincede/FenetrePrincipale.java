@@ -18,19 +18,23 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     /**
      * Creates new form FenetrePrincipale
      */
+    
+    MatricePion m = new MatricePion(10,10);
+    
+    
     public FenetrePrincipale() {
         initComponents();
-        GrilleDeJeu grille;
-        int nbCoups;
-        int nbLignes = 10; 
-        int nbColonnes = 10;  
-        PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));  
-            for (int i=0; i < nbLignes; i++) { 
-                for (int j=0; j < nbColonnes; j++ ) { 
-                JButton bouton_cellule = new JButton(); // création d'un bouton 
-                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
-                } 
-}           }
+        m.afficherGrille();
+        
+        PanneauGrille.setLayout(new java.awt.GridLayout(getNbLignes, getNbcolonnes));
+                
+        for (int i = 0; i< 10; i++) {
+            for(int j=0; j<10; j++) {
+                PionGraphique p = new PionGraphique(i,j,m.grillePions[i][j]);
+                PanneauGrille.add(p);
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
