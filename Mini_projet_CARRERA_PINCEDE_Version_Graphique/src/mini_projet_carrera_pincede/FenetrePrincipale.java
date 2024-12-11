@@ -3,7 +3,6 @@ package mini_projet_carrera_pincede;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
-import mini_projet_carrera_pincede.GrilleDeJeu;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
