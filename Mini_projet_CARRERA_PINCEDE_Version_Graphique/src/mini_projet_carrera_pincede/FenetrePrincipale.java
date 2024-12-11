@@ -4,7 +4,6 @@ package mini_projet_carrera_pincede;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import mini_projet_carrera_pincede.GrilleDeJeu;
-import mini_projet_carrera_pincede.GrilleDeJeu;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -26,7 +25,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         int nbCoups;
         int nbLignes = 10; 
         int nbColonnes = 10;  
-        this.grille = new GrilleDeJeu(nbLignes, nbColonnes); 
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));  
             for (int i=0; i < nbLignes; i++) { 
                 for (int j=0; j < nbColonnes; j++ ) { 
@@ -49,7 +47,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanneauGrille.setBackground(new java.awt.Color(204, 204, 204));
+        PanneauGrille.setBackground(new java.awt.Color(51, 255, 102));
 
         javax.swing.GroupLayout PanneauGrilleLayout = new javax.swing.GroupLayout(PanneauGrille);
         PanneauGrille.setLayout(PanneauGrilleLayout);
