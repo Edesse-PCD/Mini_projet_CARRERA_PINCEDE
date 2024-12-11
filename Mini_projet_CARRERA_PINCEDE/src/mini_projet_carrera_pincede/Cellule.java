@@ -11,7 +11,7 @@ package mini_projet_carrera_pincede;
 public class Cellule {
     
     private boolean presenceBombe;
-    private boolean devoilee;
+    private boolean devoilee = false;
     private int nbBombesAdjacentes;
 
     public boolean isPresenceBombe() {
@@ -26,6 +26,11 @@ public class Cellule {
         this.nbBombesAdjacentes = nbBombesAdjacentes;
     }
     
+    public boolean estDevoilee(){
+       return(devoilee);
+       
+       
+}
     
     public  boolean placerBombe(){
          presenceBombe=true;
@@ -46,21 +51,21 @@ public class Cellule {
 
     @Override
     public String toString() {
-        if (revelerCellule()==false){
+        if (estDevoilee()==false){
             return("?");
         }
-             if (revelerCellule() && presenceBombe ==true){
+             if (estDevoilee() && presenceBombe ==true){
             return("B");
              }
              
-            if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes>0){
+            if (estDevoilee() && presenceBombe ==false && nbBombesAdjacentes>0){
             for (int i =1;i<=8;i++){
                 if (nbBombesAdjacentes== i){
             return("  "+i);
                 }
               
             }
-                 if (revelerCellule() && presenceBombe ==false && nbBombesAdjacentes==0){
+                 if (estDevoilee() && presenceBombe ==false && nbBombesAdjacentes==0){
             for (int i =1;i<=8;i++){
                 if (nbBombesAdjacentes== i){
             return("  ");
@@ -80,18 +85,12 @@ public class Cellule {
        }
 
  
-public boolean getPresenceBombe(int i, int j) {
+
 
     
 
- 
-        return false;
-
-    
-
- 
-}}
-             
+}
+     
         
     
 

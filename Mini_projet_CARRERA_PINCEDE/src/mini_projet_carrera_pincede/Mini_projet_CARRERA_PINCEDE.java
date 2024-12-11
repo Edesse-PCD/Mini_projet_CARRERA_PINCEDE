@@ -33,7 +33,7 @@ public class Mini_projet_CARRERA_PINCEDE {
     
     for(int i =1; i<=ligne;i++){
         for(int j=1;j<=colonne;j++){
-            if (!grille.getPresenceBombe(i,j) && grille.revelerCellule()==false) {
+            if (!grille.getPresenceBombe(i,j) && !grille.cellAtCoord(i,j).estDevoilee()) {
                 System.out.println(true);
             }
             else{
