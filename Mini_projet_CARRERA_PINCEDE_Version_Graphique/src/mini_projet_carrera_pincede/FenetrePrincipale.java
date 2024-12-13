@@ -19,9 +19,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
      * Creates new form FenetrePrincipale
      */
     
-    MatricePion m = new MatricePion(10,10);
-    
-    
     public FenetrePrincipale() {
         initComponents();
         afficherGrille();
@@ -29,7 +26,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         
         for (int i=0; i < 10; i++) { 
             for (int j=0; j < 10; j++ ) { 
-                CelluleGraphique c = new CelluleGraphique(m.matriceCellules[i][j], j,i);
+                CelluleGraphique c = new CelluleGraphique(MatriceCellules[i][j], j,i);
                 PanneauGrille.add(c); // ajout au Jpanel PanneauGrille 
             } 
         } 
