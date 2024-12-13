@@ -18,6 +18,8 @@ public class GrilleDeJeu {
         return(getMatriceCellules()[i][j]);
         }
         
+        for (int i; i<)
+        
 
 public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     this.nbLignes = nbLignes;
@@ -44,13 +46,14 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     }
 public void placerBombesAleatoirement(){
     Random random = new Random();
+ 
      for (int k =1; k <=nbBombes;k++){
 
-    int i = random.nextInt();
-    int  j = random.nextInt();
+    int i = random.nextInt(nbLignes);
+    int  j = random.nextInt(nbColonnes);
     while (matriceCellules[i][j].isPresenceBombe()){
-    i = random.nextInt();
-    j = random.nextInt();
+    i = random.nextInt(nbLignes);
+    j = random.nextInt(nbColonnes);
     }
    matriceCellules[i][j].placerBombe();
     }
