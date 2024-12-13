@@ -12,7 +12,7 @@ public class Programme_Console {
     public static void main (String [] args) {
         
         MatricePion m = new MatricePion(10,10);
-        m.afficherGrille();
+        afficherGrille();
     }
     
 }

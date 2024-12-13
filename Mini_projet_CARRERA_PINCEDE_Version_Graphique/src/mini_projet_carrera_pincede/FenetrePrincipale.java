@@ -24,16 +24,15 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     
     public FenetrePrincipale() {
         initComponents();
-        m.afficherGrille();
+        afficherGrille();
+        PanneauGrille.setLayout(new java.awt.GridLayout(10, 10)); 
         
-        PanneauGrille.setLayout(new java.awt.GridLayout(getNbLignes, getNbcolonnes));
-                
-        for (int i = 0; i< 10; i++) {
-            for(int j=0; j<10; j++) {
-                PionGraphique p = new PionGraphique(i,j,m.grillePions[i][j]);
-                PanneauGrille.add(p);
-            }
-        }
+        for (int i=0; i < 10; i++) { 
+            for (int j=0; j < 10; j++ ) { 
+                CelluleGraphique c = new CelluleGraphique(m.matriceCellules[i][j], j,i);
+                PanneauGrille.add(c); // ajout au Jpanel PanneauGrille 
+            } 
+        } 
     }
 
     /**

@@ -9,7 +9,7 @@ package mini_projet_carrera_pincede;
  * @author valen
  */
 public class MatricePion {
-    Pion [][] grillePions;
+    Cellule [][] grillePions;
     int nbLignes;
     int nbColones;
 }
