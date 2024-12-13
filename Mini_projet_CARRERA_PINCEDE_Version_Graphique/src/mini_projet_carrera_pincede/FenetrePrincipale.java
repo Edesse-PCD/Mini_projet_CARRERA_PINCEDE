@@ -18,11 +18,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     /**
      * Creates new form FenetrePrincipale
      */
-    
+    private MatriceCellules matriceCellules;
     public FenetrePrincipale() {
         initComponents();
-        afficherGrille();
-        PanneauGrille.setLayout(new java.awt.GridLayout(10, 10)); 
+        matriceCellules = new MatriceCellules();
+        afficherGrille(); 
         
         for (int i=0; i < 10; i++) { 
             for (int j=0; j < 10; j++ ) { 
