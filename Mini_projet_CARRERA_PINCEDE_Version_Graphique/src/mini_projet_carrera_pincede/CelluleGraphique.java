@@ -17,7 +17,7 @@ public class CelluleGraphique extends JButton{
     Cellule celluleAssociee;
 
 
-    public CelluleGraphique(int x, int y, Cellule celluleAssociee) {
+    public CelluleGraphique(Cellule celluleAssociee, int x, int y) {
         this.x = x;
         this.y = y;
         this.celluleAssociee = celluleAssociee;

@@ -4,11 +4,14 @@
  */
 package mini_projet_carrera_pincede;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Edess
  */
-public class PionGraphique extends Jbutton{
+
+public class PionGraphique extends JButton{
     int x;
     int y;
     Cellule celluleAssociee;
@@ -20,8 +23,7 @@ public class PionGraphique extends Jbutton{
         this.celluleAssociee = celluleAssociee;
     }
     
-    
-    System.out.println("Création du pion aux coordonnées "+x+","+y);
+
     
 }
 

@@ -9,7 +9,7 @@ package mini_projet_carrera_pincede;
  * @author valen
  */
 public class MatriceCellules {
-    private Cellule[][] grilleCellules;
+    public Cellule[][] grilleCellules;
     int nbLignes;
     int nbColonnes;
 

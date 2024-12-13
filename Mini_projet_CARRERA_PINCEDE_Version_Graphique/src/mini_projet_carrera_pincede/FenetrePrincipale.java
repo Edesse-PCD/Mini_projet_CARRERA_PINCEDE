@@ -21,13 +21,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private MatriceCellules matriceCellules;
     public FenetrePrincipale() {
         initComponents();
-        matriceCellules = new MatriceCellules();
-        afficherGrille(); 
+        matriceCellules = new   MatriceCellules(10,10);
+        matriceCellules.afficherMatrice(); 
+        PanneauGrille.setLayout(new GridLayout(10,10)); 
         
         for (int i=0; i < 10; i++) { 
             for (int j=0; j < 10; j++ ) { 
-                CelluleGraphique c = new CelluleGraphique(MatriceCellules[i][j], j,i);
-                PanneauGrille.add(c); // ajout au Jpanel PanneauGrille 
+                CelluleGraphique c = new CelluleGraphique(matriceCellules.grilleCellules[i][j], i,j);
+                PanneauGrille.add(c);
             } 
         } 
     }

@@ -78,6 +78,15 @@ public void revelerCellule(int ligne, int colonne){
         matriceCellules[i][j].revelerCellule();
         }
     }
+        if (!cellAtCoord(ligne,colonne).revelerCellule() && cellAtCoord(ligne,colonne).isPresenceBombe()){
+        System.out.println("Erreur");
+    } else { 
+            cellAtCoord(ligne,colonne).revelerCellule();
+ 
+    
+        
+    }
+    
     
     
     
@@ -102,9 +111,32 @@ public boolean toutesCellulesRevelees(){
            return(gagner);
 }
 
-            
+    @Override
+    public String toString() {
+        for (int i =0;i<=nbLignes;i++){
+            System.out.println("\n |");
+           for (int j =0;j<=nbLignes;j++){
+               System.out.println(cellAtCoord(i,j).toString());
+               
+           }
         }
+        return("");
+        
+    }
+}
+       
     
+
+  
+        
+
+        
+    
+     
+
+    
+          
+        
     
 
 
