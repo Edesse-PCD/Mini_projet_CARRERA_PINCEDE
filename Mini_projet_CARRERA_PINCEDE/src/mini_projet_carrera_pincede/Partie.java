@@ -35,16 +35,20 @@ public class Partie {
         
        
     }
-    public void verifierVictoire(){
-    if (grille.toutesCellulesRevelees()) System.out.println("Victoire!");
+    public boolean verifierVictoire(){
+    if (grille.toutesCellulesRevelees()) return(true);
+    else return(false);
     
 }
-    public void demarrerPartie(int nbLignes,int nbColonnes, int nbBombes){ 
+    public boolean demarrerPartie(int nbLignes,int nbColonnes, int nbBombes){ 
     GrilleDeJeu grille = new GrilleDeJeu(nbLignes,nbColonnes,nbBombes);
     while (!verifierVictoire()){
         tourDeJeu(nbLignes, nbColonnes);
     }
+    return(true);
+        
+    }
     
         
     }
-}
+
