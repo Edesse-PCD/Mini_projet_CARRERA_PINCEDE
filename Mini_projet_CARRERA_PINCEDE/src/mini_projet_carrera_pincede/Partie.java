@@ -15,14 +15,22 @@ public class Partie {
     GrilleDeJeu grille ;
     int nbvies;
     public void initialiserPartie(){
-      GrilleDeJeu  grille = new GrilleDeJeu(10,10,2);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Veuillez entrer le nombre de lignes souhaité : ");
+        int nbLignes = scanner.nextInt();
+        System.out.print("Veuillez entrer le nombre de colonnes souhaité : ");
+        int nbColonnes = scanner.nextInt();
+        System.out.print("Veuillez entrer le nombre de bombes souhaité : ");
+        int nbBombes = scanner.nextInt();
+        
+      GrilleDeJeu  grille = new GrilleDeJeu(nbLignes,nbColonnes,nbBombes);
       grille.placerBombesAleatoirement();
       nbvies = 3;
       
       
     }
     
-    public  void tourDeJeu(int nbLignes, int nbColonnes){
+    public  void tourDeJeu(){
          Scanner scanner = new Scanner(System.in);
         
         System.out.print("Veuillez entrer les coordonnées en x de la case à révéler : ");
@@ -40,12 +48,13 @@ public class Partie {
     else return(false);
     
 }
-    public boolean demarrerPartie(int nbLignes,int nbColonnes, int nbBombes){ 
-    GrilleDeJeu grille = new GrilleDeJeu(nbLignes,nbColonnes,nbBombes);
+    public boolean demarrerPartie(){ 
+    initialiserPartie();
     while (!verifierVictoire()){
-        tourDeJeu(nbLignes, nbColonnes);
+        tourDeJeu();
     }
-    return(true);
+    System.out.println("Victoire") ;
+            return(true);
         
     }
     

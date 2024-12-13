@@ -111,10 +111,32 @@ public boolean toutesCellulesRevelees(){
            return(gagner);
 }
 
-
-            
+    @Override
+    public String toString() {
+        for (int i =0;i<=nbLignes;i++){
+            System.out.println("\n |");
+           for (int j =0;j<=nbLignes;j++){
+               System.out.println(cellAtCoord(i,j).toString());
+               
+           }
         }
+        return("");
+        
+    }
+}
+       
     
+
+  
+        
+
+        
+    
+     
+
+    
+          
+        
     
 
 
