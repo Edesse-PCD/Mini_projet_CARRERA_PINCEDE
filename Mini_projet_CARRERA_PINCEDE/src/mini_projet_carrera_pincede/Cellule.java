@@ -48,9 +48,12 @@ public class Cellule {
 
     
     
-    
+     public void IncrementerNbBombesAdj(int i,int j){
+       nbBombesAdjacentes+=1;
+       }
 
-    @Override
+
+ @Override
 public String toString() {
     if (!devoilee) {
         return "?"; // Non dévoilée
@@ -58,17 +61,10 @@ public String toString() {
     if (presenceBombe) {
         return "B"; // Bombe
     }
-    if (nbBombesAdjacentes > 0) {
-        return String.valueOf(nbBombesAdjacentes); // Nombre de bombes adjacentes
+  if (nbBombesAdjacentes > 0) {
+        return String.valueOf(nbBombesAdjacentes);
     }
-    return " "; // Cellule vide sans bombe
+    return " "; // Afficher un espace si la cellule n'a pas de bombes adjacentes
 }
-     public void IncrementerNbBombesAdj(int i,int j){
-       nbBombesAdjacentes+=1;
-       }
+
 }
-        
-    
-
-
-   
