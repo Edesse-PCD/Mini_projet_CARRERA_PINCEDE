@@ -14,10 +14,9 @@ public class Mini_projet_CARRERA_PINCEDE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          
-           
-     demarrerPartie();   
-        
+
+        Partie partie = new Partie(); // Appelle le constructeur par défaut
+        partie.demarrerPartie();    
     
     
     }
@@ -30,3 +29,9 @@ public class Mini_projet_CARRERA_PINCEDE {
   
     }
 
+
+    
+    
+    
+
+    

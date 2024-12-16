@@ -14,11 +14,21 @@ public class GrilleDeJeu {
     private int nbColonnes;
     private int nbBombes;
     
-        public Cellule cellAtCoord(int i,int j){
+
+        
+      
+    
+    
+
+
+ 
+
+    
+
+    
+    public Cellule cellAtCoord(int i,int j){
         return(getMatriceCellules()[i][j]);
         }
-        
-        for (int i; i<)
         
 
 public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
@@ -26,6 +36,12 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     this.nbColonnes = nbColonnes;
     this.nbBombes = nbBombes;
     this.matriceCellules = new Cellule[nbLignes][nbColonnes];
+        
+for (int i=0;i<nbLignes;i++){   
+for (int j=0;j<nbColonnes;j++){
+    matriceCellules[i][j]= new Cellule();
+}
+}
     }
 
     public Cellule[][] getMatriceCellules() {
@@ -60,7 +76,7 @@ public void placerBombesAleatoirement(){
 }
 public void calculerBombesAdjacentes() {
     for (int i =1;i<nbLignes-2;i++){
-        for (int j=1;j<nbColonnes-2;j++)
+        for (int j=1;j<nbColonnes-2;j++){
     if (!matriceCellules[i][j].isPresenceBombe()){
         if (matriceCellules[i-1][j-1].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);  
         if (matriceCellules[i-1][j].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
@@ -72,6 +88,7 @@ public void calculerBombesAdjacentes() {
         if (matriceCellules[i+1][j+1].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
     }
 }
+    }
 
 }
 public void revelerCellule(int ligne, int colonne){
