@@ -12,37 +12,53 @@ import java.util.Scanner;
  * @author Edess
  */
 public class Partie {
-    
-    int nbvies;
-    public void initialiserPartie(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Veuillez entrer le nombre de lignes souhaité : ");
-        int nbLignes = scanner.nextInt();
-        System.out.print("Veuillez entrer le nombre de colonnes souhaité : ");
-        int nbColonnes = scanner.nextInt();
-        System.out.print("Veuillez entrer le nombre de bombes souhaité : ");
-        int nbBombes = scanner.nextInt();
-     
-      GrilleDeJeu  grille = new GrilleDeJeu(nbLignes,nbColonnes,nbBombes);
-      for (int i=0;i<nbLignes;i++){   
-for (int j=0;j<nbColonnes;j++){
-    grille[i][j]= new Cellule();
-      grille.placerBombesAleatoirement();
-      nbvies = 3;
-}
-      }
-      
+   
+     private GrilleDeJeu grille;
+    private int nbVies;
+
+    // Constructeur par défaut sans arguments
+    public Partie() {
+        initialiserPartie();
     }
+
+    // Méthode pour initialiser la partie
+    public void initialiserPartie() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Entrez le nombre de lignes : ");
+        int nbLignes = scanner.nextInt();
+
+        System.out.print("Entrez le nombre de colonnes : ");
+        int nbColonnes = scanner.nextInt();
+
+        System.out.print("Entrez le nombre de bombes : ");
+        int nbBombes = scanner.nextInt();
+
+        // Initialisation de la grille avec les paramètres saisis
+        grille = new GrilleDeJeu(nbLignes, nbColonnes, nbBombes);
+        grille.placerBombesAleatoirement(nbBombes);
+        nbVies = 3;
+    
+      
+    
+   
+      grille.placerBombesAleatoirement(nbBombes);
+      nbVies = 3;
+}
+      
+      
+    
     
     public  void tourDeJeu(){
          Scanner scanner = new Scanner(System.in);
+         System.out.println(grille);
         
         System.out.print("Veuillez entrer les coordonnées en x de la case à révéler : ");
         int x = scanner.nextInt();
         System.out.print("Veuillez entrer les coordonnées en y de la case à révéler : ");
         int y = scanner.nextInt();
         grille.cellAtCoord(x,y).revelerCellule();
-        if (grille.getPresenceBombe(x,y)) nbvies-=1;
+        if (grille.getPresenceBombe(x,y)) nbVies-=1;
         
         
        
@@ -53,8 +69,9 @@ for (int j=0;j<nbColonnes;j++){
     
 }
     public boolean demarrerPartie(){ 
-    initialiserPartie();
+  
     while (!verifierVictoire()){
+        
         tourDeJeu();
     }
     System.out.println("Victoire") ;
