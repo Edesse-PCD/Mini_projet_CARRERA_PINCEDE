@@ -4,6 +4,8 @@
  */
 package mini_projet_carrera_pincede;
 
+import .*;
+
 /**
  *
  * @author Edess

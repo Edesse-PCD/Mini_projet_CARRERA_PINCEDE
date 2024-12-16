@@ -1,5 +1,6 @@
 package mini_projet_carrera_pincede;
 
+import .*;
 import java.util.Random;
 import mini_projet_carrera_pincede.Cellule;
 
