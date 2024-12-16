@@ -60,7 +60,7 @@ for (int j=0;j<nbColonnes;j++){
     public int getNbBombes() {
         return nbBombes;
     }
-public void placerBombesAleatoirement(){
+public void placerBombesAleatoirement(int nbBombes){
     Random random = new Random();
  
      for (int k =1; k <=nbBombes;k++){
@@ -75,8 +75,8 @@ public void placerBombesAleatoirement(){
     }
 }
 public void calculerBombesAdjacentes() {
-    for (int i =1;i<nbLignes-2;i++){
-        for (int j=1;j<nbColonnes-2;j++){
+    for (int i =0;i<nbLignes-2;i++){
+        for (int j=0;j<nbColonnes-2;j++){
     if (!matriceCellules[i][j].isPresenceBombe()){
         if (matriceCellules[i-1][j-1].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);  
         if (matriceCellules[i-1][j].isPresenceBombe())   matriceCellules[i][j].IncrementerNbBombesAdj(i,j);
@@ -122,8 +122,8 @@ else return(false);
 
 public boolean toutesCellulesRevelees(){
     boolean gagner = true;
-    for(int i =1; i<=nbLignes;i++){
-        for(int j=1;j<=nbColonnes;j++){
+    for(int i =0; i<nbLignes;i++){
+        for(int j=0;j<nbColonnes;j++){
            if (cellAtCoord(i,j).revelerCellule()) gagner = true;
            else gagner = false;
         }
