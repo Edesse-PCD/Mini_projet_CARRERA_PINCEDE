@@ -51,6 +51,7 @@ public class Partie {
     
     public  void tourDeJeu(){
          Scanner scanner = new Scanner(System.in);
+         System.out.println(grille);
         
         System.out.print("Veuillez entrer les coordonnées en x de la case à révéler : ");
         int x = scanner.nextInt();
@@ -68,8 +69,9 @@ public class Partie {
     
 }
     public boolean demarrerPartie(){ 
-    initialiserPartie();
+  
     while (!verifierVictoire()){
+        
         tourDeJeu();
     }
     System.out.println("Victoire") ;
