@@ -16,7 +16,7 @@ public class Partie {
      private GrilleDeJeu grille;
     private int nbVies;
 
-    // Constructeur par défaut sans arguments
+    // Constructeur par défaut sans arguments qui va appaeler intialiser partie 
     public Partie() {
         initialiserPartie();
     }
@@ -34,12 +34,12 @@ public class Partie {
         System.out.print("Entrez le nombre de bombes : ");
         int nbBombes = scanner.nextInt();
         
-         System.out.print("Entrez le nombre de vies souhaitées : ");
-        int nbVies = scanner.nextInt();
+       System.out.print("Entrez le nombre de vies souhaitées : ");
+    this.nbVies = scanner.nextInt();
 
         // Initialisation de la grille avec les paramètres saisis
         grille = new GrilleDeJeu(nbLignes, nbColonnes, nbBombes);
-        grille.placerBombesAleatoirement(nbBombes);
+        grille.placerBombesAleatoirement(nbBombes); 
         grille.calculerBombesAdjacentes();
 
 }
@@ -49,40 +49,50 @@ public class Partie {
     
     public  boolean  tourDeJeu(){ //je crée une méthode boolean pour qu'elle renvoie quand le joueur n'a plus de vie 
          Scanner scanner = new Scanner(System.in);
-         System.out.println(grille);
+         System.out.println(grille); // j'affiche ma grille 
         
-        System.out.print("Veuillez entrer les coordonnées en x de la case à révéler : ");
+        System.out.print("Quel est le numéro de colonne de la case que vous souhaitez révéler? : ");
         int x = scanner.nextInt();
-        System.out.print("Veuillez entrer les coordonnées en y de la case à révéler : ");
+        System.out.print("Quel est le numéro de ligne de la case que vous souhaitez révéler? : ");
         int y = scanner.nextInt();
         grille.cellAtCoord(x,y).revelerCellule();
-        if (grille.getPresenceBombe(x,y)) nbVies-=1;
+        if (grille.getPresenceBombe(x,y)) nbVies-=1; // si il y a une bombe le joueur perd une vie 
         
-        if (nbVies == 0) {
-            System.out.println("Vous avez perdu!");
-                    return false ;
-                            }
-        else return(true);
+        if (nbVies <= 0) {
+            
+                    return false ; //Le joueur a perdu donc la méthode renvoie false, ça va nous servier pour la méthode demarrerPartie().
+                            } else{ return(true);
+       
             
        
+    }
     }
     public boolean verifierVictoire(){
     if (grille.toutesCellulesRevelees()) return(true);
     else return(false);
     
 }
-    public boolean demarrerPartie(){ 
+    public void demarrerPartie(){ 
   
-    while (!verifierVictoire() && tourDeJeu()){
+    while (!verifierVictoire()){
+       if (tourDeJeu()){ //là je teste qu'il reste des vies et tourDeJeu() s'exécute.
         
-        tourDeJeu();
+       } else{
+           System.out.println("Vous avez perdu... \nVoulez vous rejouer ? \nTapez 1 pour oui, 2 pour non"); //Ici, il n'a plus de vies.
+             Scanner scanner = new Scanner(System.in); //là je vais  donner la possibilité au joueur de relancer la partie 
+             int rejouer = scanner.nextInt();
+             if (rejouer==1){ //si il dit oui alors la partie se relance ; on en crée une nouvelle 
+              Partie partie = new Partie();
+               partie.demarrerPartie();
+               return;
+             } else { System.out.println("A bientôt!"); //Sinon, on affiche à bientôt
+           }
+           
+        
     }
+    System.out.println("Victoire") ;      
+ }
     
-    System.out.println("Victoire") ;
-            return(true);
-        
     }
-    
-        
-    }
+}
 
