@@ -1,8 +1,12 @@
 package mini_projet_carrera_pincede;
-
+ 
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -19,6 +23,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
      * Creates new form FenetrePrincipale
      */
     private MatriceCellules matriceCellules;
+    
     public FenetrePrincipale() {
         initComponents();
         matriceCellules = new   MatriceCellules(10,10);
