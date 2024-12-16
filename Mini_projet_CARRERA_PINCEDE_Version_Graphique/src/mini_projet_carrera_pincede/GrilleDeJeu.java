@@ -43,7 +43,7 @@ public GrilleDeJeu(int nbLignes, int nbColonnes, int nbBombes) {
     public int getNbBombes() {
         return nbBombes;
     }
-public void placerBombesAleatoirement(){
+public void placerBombesAleatoirement(int nbBombes){
     Random random = new Random();
      for (int k =1; k <=nbBombes;k++){
 
