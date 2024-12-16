@@ -33,23 +33,21 @@ public class Partie {
 
         System.out.print("Entrez le nombre de bombes : ");
         int nbBombes = scanner.nextInt();
+        
+         System.out.print("Entrez le nombre de vies souhaitées : ");
+        int nbVies = scanner.nextInt();
 
         // Initialisation de la grille avec les paramètres saisis
         grille = new GrilleDeJeu(nbLignes, nbColonnes, nbBombes);
         grille.placerBombesAleatoirement(nbBombes);
-        nbVies = 3;
-    
-      
-    
-   
-      grille.placerBombesAleatoirement(nbBombes);
-      nbVies = 3;
+        grille.calculerBombesAdjacentes();
+
 }
       
       
     
     
-    public  void tourDeJeu(){
+    public  boolean  tourDeJeu(){ //je crée une méthode boolean pour qu'elle renvoie quand le joueur n'a plus de vie 
          Scanner scanner = new Scanner(System.in);
          System.out.println(grille);
         
@@ -60,7 +58,12 @@ public class Partie {
         grille.cellAtCoord(x,y).revelerCellule();
         if (grille.getPresenceBombe(x,y)) nbVies-=1;
         
-        
+        if (nbVies == 0) {
+            System.out.println("Vous avez perdu!");
+                    return false ;
+                            }
+        else return(true);
+            
        
     }
     public boolean verifierVictoire(){
@@ -70,10 +73,11 @@ public class Partie {
 }
     public boolean demarrerPartie(){ 
   
-    while (!verifierVictoire()){
+    while (!verifierVictoire() && tourDeJeu()){
         
         tourDeJeu();
     }
+    
     System.out.println("Victoire") ;
             return(true);
         
