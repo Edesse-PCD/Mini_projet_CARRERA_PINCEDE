@@ -15,8 +15,8 @@ public class Mini_projet_CARRERA_PINCEDE {
      */
     public static void main(String[] args) {
           
-           
-     demarrerPartie();   
+      Partie partie = new Partie();     
+     partie.demarrerPartie();   
         
     
     

@@ -13,6 +13,7 @@ public class Cellule {
     private boolean presenceBombe;
     private boolean devoilee = false;
     private int nbBombesAdjacentes;
+    public Cellule cellule;
 
     public boolean isPresenceBombe() {
         return presenceBombe;
@@ -50,47 +51,22 @@ public class Cellule {
     
 
     @Override
-    public String toString() {
-        if (estDevoilee()==false){
-            return("?");
-        }
-             if (estDevoilee() && presenceBombe ==true){
-            return("B");
-             }
-             
-            if (estDevoilee() && presenceBombe ==false && nbBombesAdjacentes>0){
-            for (int i =1;i<=8;i++){
-                if (nbBombesAdjacentes== i){
-            return("  "+i);
-                }
-              
-            }
-                 if (estDevoilee() && presenceBombe ==false && nbBombesAdjacentes==0){
-            for (int i =1;i<=8;i++){
-                if (nbBombesAdjacentes== i){
-            return("  ");
-                }
-                
-        }
-        }
-    
-        }
-            return("  ");
+public String toString() {
+    if (!devoilee) {
+        return "?"; // Non dévoilée
     }
-     
-
-    
-         public void IncrementerNbBombesAdj(int i,int j){
+    if (presenceBombe) {
+        return "B"; // Bombe
+    }
+    if (nbBombesAdjacentes > 0) {
+        return String.valueOf(nbBombesAdjacentes); // Nombre de bombes adjacentes
+    }
+    return " "; // Cellule vide sans bombe
+}
+     public void IncrementerNbBombesAdj(int i,int j){
        nbBombesAdjacentes+=1;
        }
-
- 
-
-
 }
-    
-
-             
         
     
 
