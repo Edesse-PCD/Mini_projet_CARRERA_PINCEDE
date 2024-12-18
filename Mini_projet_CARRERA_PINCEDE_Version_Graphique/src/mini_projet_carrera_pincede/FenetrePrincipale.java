@@ -7,6 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,30 +22,54 @@ import java.awt.event.ActionListener;
  * @author Valentin
  */
 
+/**
+ * Classe FenetrePrincipale pour afficher la grille du jeu.
+ * 
+ * @author Valentin
+ */
 public final class FenetrePrincipale extends javax.swing.JFrame {
-    GrilleDeJeu m ;
-    public void MatriceCellules() {
-        m = new GrilleDeJeu(10,10,10);
-        m.afficherMatrice();
-    }
+    public GrilleDeJeu grilleDeJeu;
+    public JPanel panneauGrille;
+    
     public FenetrePrincipale() {
         initComponents();
-        MatriceCellules();
-        PanneauGrille.setLayout(new java.awt.GridLayout(10, 10)); 
-        m.placerBombesAleatoirement(15);
+        this.grilleDeJeu = new GrilleDeJeu(10, 10, 15);
+        grilleDeJeu.placerBombesAleatoirement(15);
+        grilleDeJeu.calculerBombesAdjacentes(); 
+        creerGrilleGraphique();  
+    }
+
+    public void creerGrilleGraphique() {
+        // Initialisation du panneau contenant la grille
+        panneauGrille.setLayout(new GridLayout(10, 10));
         
-        for (int i=0; i < 10; i++) { 
-            for (int j=0; j < 10; j++ ) { 
-                CelluleGraphique c = new CelluleGraphique(m.cellAtCoord (i,j), j,i);
-                c.addActionListener((java.awt.event.ActionEvent evt) -> {
-                    m.getClick(c.y , c.x);
-                    PanneauGrille.repaint();
+        for (int i = 0; i < grilleDeJeu.getNbLignes(); i++) {
+            for (int j = 0; j < grilleDeJeu.getNbColonnes(); j++) {
+                Cellule cell = grilleDeJeu.cellAtCoord(i, j);
+                
+                JButton boutonCellule = new JButton();
+                
+                boutonCellule.setText(cell.isPresenceBombe() ? "B" : String.valueOf(cell.getNbBombesAdjacentes()));
+              
+                boutonCellule.addActionListener(e -> {
+                    if (cell.isPresenceBombe()) {
+                        boutonCellule.setText("BOOM!");
+                        JOptionPane.showMessageDialog(this, "Vous avez cliqué sur une bombe !", "Perdu", JOptionPane.ERROR_MESSAGE);
+                        System.exit(0);
+                    } else {
+                        boutonCellule.setEnabled(false);
+                        boutonCellule.setText(String.valueOf(cell.getNbBombesAdjacentes()));
+                    }
                 });
                 
-                PanneauGrille.add(c);
-            } 
-        } 
+                panneauGrille.add(boutonCellule);
+            }
+        }
+        this.add(panneauGrille);
+        this.pack();
+        this.setVisible(true);
     }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
