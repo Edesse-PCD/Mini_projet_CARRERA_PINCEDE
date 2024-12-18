@@ -17,30 +17,29 @@ import java.awt.event.ActionListener;
  * @author Valentin
  */
 
-public class FenetrePrincipale extends JFrame {
-
+public final class FenetrePrincipale extends javax.swing.JFrame {
+    GrilleDeJeu m ;
+    public void MatriceCellules() {
+        m = new GrilleDeJeu(10,10,10);
+        m.afficherMatrice();
+    }
     public FenetrePrincipale() {
-
-        JPanel PanneauGrille = new JPanel();
-        PanneauGrille.setLayout(new GridLayout(10, 10)); // Crée une grille 10x10
-
-        this.getContentPane().add(PanneauGrille, BorderLayout.CENTER);
-
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                this.Cellule = MatriceCellules.grilleCellules[i][j];
-                CelluleGraphique c = new CelluleGraphique(cellule, i, j);
-
-                c.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent evt) {
-                        System.out.println(CelluleGraphique.toString());
-                    }
+        initComponents();
+        MatriceCellules();
+        PanneauGrille.setLayout(new java.awt.GridLayout(10, 10)); 
+        m.placerBombesAleatoirement(15);
+        
+        for (int i=0; i < 10; i++) { 
+            for (int j=0; j < 10; j++ ) { 
+                CelluleGraphique c = new CelluleGraphique(m.cellAtCoord (i,j), j,i);
+                c.addActionListener((java.awt.event.ActionEvent evt) -> {
+                    m.getClick(c.y , c.x);
+                    PanneauGrille.repaint();
                 });
-
+                
                 PanneauGrille.add(c);
-            }
-        }
+            } 
+        } 
     }
 
     @SuppressWarnings("unchecked")
