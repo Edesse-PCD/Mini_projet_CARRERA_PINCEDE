@@ -11,7 +11,7 @@ package mini_projet_carrera_pincede;
 public class Cellule {
     private boolean presenceBombe;
     private boolean devoilee = false;
-    private int nbBombesAdjacentes;
+    private int nbBombesAdjacentes = 0;
 
     public boolean isPresenceBombe() {
         return presenceBombe;

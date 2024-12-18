@@ -82,24 +82,29 @@ public Cellule[][] getMatriceCellules() {
         }
     }
 
-    public void revelerCellule(int ligne, int colonne) {
-        // Vérifier si la cellule est dans les limites de la grille
-        if (ligne >= 0 && ligne < nbLignes && colonne >= 0 && colonne < nbColonnes) {
-            // Révéler la cellule
+  public void revelerCellule(int ligne, int colonne) {
+    // Vérifier si la cellule est dans les limites de la grille
+    if (ligne >= 0 && ligne < nbLignes && colonne >= 0 && colonne < nbColonnes) {
+        // Révéler la cellule si elle n'est pas déjà révélée
+        if (!matriceCellules[ligne][colonne].estDevoilee()) {
             matriceCellules[ligne][colonne].revelerCellule();
+        }
 
-            // Si aucune bombe adjacente, révéler les cellules voisines
-            if (matriceCellules[ligne][colonne].getNbBombesAdjacentes() == 0) {
-                for (int i = ligne - 1; i <= ligne + 1; i++) {
-                    for (int j = colonne - 1; j <= colonne + 1; j++) {
-                        if (i >= 0 && i < nbLignes && j >= 0 && j < nbColonnes && !matriceCellules[i][j].estDevoilee()) {
-                            revelerCellule(i, j); // Appel récursif pour révéler les cellules voisines
-                        }
+       
+        if (matriceCellules[ligne][colonne].getNbBombesAdjacentes() == 0) {
+            
+            for (int i = ligne - 1; i <= ligne + 1; i++) {
+                for (int j = colonne - 1; j <= colonne + 1; j++) {
+                
+                    if (i >= 0 && i < nbLignes && j >= 0 && j < nbColonnes 
+                        && !matriceCellules[i][j].estDevoilee()) 
+                        revelerCellule(i, j); // Appel récursif pour révéler les cellules voisines
                     }
                 }
             }
         }
     }
+
 
     public boolean getPresenceBombe(int i, int j) {
         return cellAtCoord(i, j).isPresenceBombe();
