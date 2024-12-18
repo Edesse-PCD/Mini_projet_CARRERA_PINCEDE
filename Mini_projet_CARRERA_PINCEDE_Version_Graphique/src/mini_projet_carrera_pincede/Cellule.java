@@ -9,11 +9,9 @@ package mini_projet_carrera_pincede;
  * @author Edess
  */
 public class Cellule {
-    
     private boolean presenceBombe;
     private boolean devoilee = false;
     private int nbBombesAdjacentes;
-    public Cellule cellule;
 
     public boolean isPresenceBombe() {
         return presenceBombe;
@@ -26,45 +24,38 @@ public class Cellule {
     public void setNbBombesAdjacentes(int nbBombesAdjacentes) {
         this.nbBombesAdjacentes = nbBombesAdjacentes;
     }
-    
-    public boolean estDevoilee(){
-       return(devoilee);
-       
-       
-}
-    
-    public  boolean placerBombe(){
-         presenceBombe=true;
-                return(true);
-        
-    }
-    
-    public  boolean revelerCellule(){
-        devoilee=true;
-        return(devoilee);
-       
-    }
-    
 
-    
-    
-     public void IncrementerNbBombesAdj(int i,int j){
-       nbBombesAdjacentes+=1;
-       }
-
-
- @Override
-public String toString() {
-    if (!devoilee) {
-        return "?"; // Non dévoilée
+    public boolean estDevoilee() {
+        return devoilee;
     }
-    if (presenceBombe) {
-        return "B"; // Bombe
-    }
-  if (nbBombesAdjacentes > 0) {
-        return String.valueOf(nbBombesAdjacentes);
-    }
-    return " "; // Afficher un espace si la cellule n'a pas de bombes adjacentes
-}
 
+    public boolean placerBombe() {
+        presenceBombe = true;
+        return true;
+    }
+
+    public boolean revelerCellule() {
+        if (!devoilee) {
+            devoilee = true;
+        }
+        return devoilee;
+    }
+
+    public void IncrementerNbBombesAdj() {
+        nbBombesAdjacentes += 1;
+    }
+
+    @Override
+    public String toString() {
+        if (!devoilee) {
+            return "?"; // Non dévoilée
+        }
+        if (presenceBombe) {
+            return "B"; // Bombe
+        }
+        if (nbBombesAdjacentes > 0) {
+            return String.valueOf(nbBombesAdjacentes);
+        }
+        return " "; // Afficher un espace si la cellule n'a pas de bombes adjacentes
+    }
 }
