@@ -1,15 +1,10 @@
 package mini_projet_carrera_pincede;
  
 
-import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -36,33 +31,15 @@ public final class FenetrePrincipale extends javax.swing.JFrame {
         this.grilleDeJeu = new GrilleDeJeu(10, 10, 15);
         grilleDeJeu.placerBombesAleatoirement(15);
         grilleDeJeu.calculerBombesAdjacentes(); 
-        creerGrilleGraphique();  
     }
 
-    public void creerGrilleGraphique() {
-        // Initialisation du panneau contenant la grille
-        panneauGrille.setLayout(new GridLayout(10, 10));
+    public void getMatriceCellules() {
+        panneauGrille.setLayout(new GridLayout(10,10));
         
         for (int i = 0; i < grilleDeJeu.getNbLignes(); i++) {
             for (int j = 0; j < grilleDeJeu.getNbColonnes(); j++) {
-                Cellule cell = grilleDeJeu.cellAtCoord(i, j);
-                
-                JButton boutonCellule = new JButton();
-                
-                boutonCellule.setText(cell.isPresenceBombe() ? "B" : String.valueOf(cell.getNbBombesAdjacentes()));
-              
-                boutonCellule.addActionListener(e -> {
-                    if (cell.isPresenceBombe()) {
-                        boutonCellule.setText("BOOM!");
-                        JOptionPane.showMessageDialog(this, "Vous avez cliqué sur une bombe !", "Perdu", JOptionPane.ERROR_MESSAGE);
-                        System.exit(0);
-                    } else {
-                        boutonCellule.setEnabled(false);
-                        boutonCellule.setText(String.valueOf(cell.getNbBombesAdjacentes()));
-                    }
-                });
-                
-                panneauGrille.add(boutonCellule);
+                getMatriceCellules = grilleDeJeu.cellAtCoord(i, j);  
+                panneauGrille.add(getMatriceCellules);
             }
         }
         this.add(panneauGrille);
