@@ -50,7 +50,7 @@ public final class FenetrePrincipale extends javax.swing.JFrame {
                     }
                     else if (grilleDeJeu.toutesCellulesRevelees()){
                         System.out.println("Victoire");
-                        
+                        Victoire();
                     }
                 });
                 
@@ -131,6 +131,12 @@ public final class FenetrePrincipale extends javax.swing.JFrame {
 public void Defaite() {
     Defaite d = new Defaite();
     d.setVisible(true);
+    dispose();
+            
+}
+public void Victoire() {
+    Victoire v = new Victoire();
+    v.setVisible(true);
     dispose();
             
 }}
