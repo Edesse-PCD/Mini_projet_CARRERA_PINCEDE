@@ -16,33 +16,33 @@ import java.awt.event.ActionListener;
  *
  * @author Valentin
  */
-public class FenetrePrincipale extends javax.swing.JFrame {
 
-    private MatriceCellules matriceCellules;
+public class FenetrePrincipale extends JFrame {
 
     public FenetrePrincipale() {
-        matriceCellules = new MatriceCellules(10, 10);
-        matriceCellules.afficherMatrice(); 
-        
-        PanneauGrille = new JPanel();
-        PanneauGrille.setLayout(new GridLayout(10, 10));
+
+        JPanel PanneauGrille = new JPanel();
+        PanneauGrille.setLayout(new GridLayout(10, 10)); // Crée une grille 10x10
 
         this.getContentPane().add(PanneauGrille, BorderLayout.CENTER);
 
-        for (int i = 0; i < 10; i++) { 
-            for (int j = 0; j < 10; j++) { 
-                CelluleGraphique c = new CelluleGraphique(matriceCellules.grilleCellules[i][j], i, j);
-                
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                this.Cellule = MatriceCellules.grilleCellules[i][j];
+                CelluleGraphique c = new CelluleGraphique(cellule, i, j);
+
                 c.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent evt) {
-                        c.celluleAssociee.revelerCellule();
+                        System.out.println(CelluleGraphique.toString());
                     }
                 });
 
                 PanneauGrille.add(c);
-            } 
-        } 
+            }
+        }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
