@@ -14,6 +14,8 @@ public class GrilleDeJeu {
     private int nbColonnes;
     private int nbBombes;
     
+    
+    
 
         
       
