@@ -38,14 +38,15 @@ public class Partie {
         grille = new GrilleDeJeu(nbLignes, nbColonnes, nbBombes);
         grille.placerBombesAleatoirement(nbBombes); 
         grille.calculerBombesAdjacentes();
+      
     }
 
     public boolean tourDeJeu() {
         System.out.println(grille); // Affiche la grille
 
-        System.out.print("Quel est le numéro de colonne de la case que vous souhaitez révéler? : ");
-        int x = scanner.nextInt();
         System.out.print("Quel est le numéro de ligne de la case que vous souhaitez révéler? : ");
+        int x = scanner.nextInt();
+        System.out.print("Quel est le numéro de colonne de la case que vous souhaitez révéler? : ");
         int y = scanner.nextInt();
 
         grille.cellAtCoord(x, y).revelerCellule();
