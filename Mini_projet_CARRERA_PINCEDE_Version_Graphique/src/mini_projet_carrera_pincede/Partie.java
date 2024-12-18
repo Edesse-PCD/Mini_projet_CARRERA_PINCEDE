@@ -49,7 +49,7 @@ public class Partie {
         System.out.print("Quel est le numéro de colonne de la case que vous souhaitez révéler? : ");
         int y = scanner.nextInt();
 
-        grille.cellAtCoord(x, y).revelerCellule();
+        grille.revelerCellule(x,y);
 
         if (grille.getPresenceBombe(x, y)) {
             nbVies -= 1; // Perte d'une vie si la case contient une bombe

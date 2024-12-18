@@ -4,6 +4,7 @@ import java.util.Random;
 import mini_projet_carrera_pincede.Cellule;
 
 public class GrilleDeJeu {
+
     private Cellule[][] matriceCellules;
     private int nbLignes;
     private int nbColonnes;
@@ -21,15 +22,14 @@ public class GrilleDeJeu {
             }
         }
     }
-    
-public Cellule[][] getMatriceCellules() {
+
+    public Cellule[][] getMatriceCellules() {
         return matriceCellules;
     }
+
     public Cellule cellAtCoord(int i, int j) {
         return getMatriceCellules()[i][j];
     }
-
-    
 
     public int getNbLignes() {
         return nbLignes;
@@ -82,29 +82,32 @@ public Cellule[][] getMatriceCellules() {
         }
     }
 
-  public void revelerCellule(int ligne, int colonne) {
-    // Vérifier si la cellule est dans les limites de la grille
-    if (ligne >= 0 && ligne < nbLignes && colonne >= 0 && colonne < nbColonnes) {
-        // Révéler la cellule si elle n'est pas déjà révélée
-        if (!matriceCellules[ligne][colonne].estDevoilee()) {
-            matriceCellules[ligne][colonne].revelerCellule();
+    public void revelerCellule(int ligne, int colonne) {
+        if (matriceCellules[ligne][colonne].estDevoilee()) {
+            return;
         }
+        // Vérifier si la cellule est dans les limites de la grille
+        if (ligne >= 0 && ligne < nbLignes && colonne >= 0 && colonne < nbColonnes) {
+            // Révéler la cellule si elle n'est pas déjà révélée
+            matriceCellules[ligne][colonne].revelerCellule();
 
-       
-        if (matriceCellules[ligne][colonne].getNbBombesAdjacentes() == 0) {
-            
-            for (int i = ligne - 1; i <= ligne + 1; i++) {
-                for (int j = colonne - 1; j <= colonne + 1; j++) {
-                
-                    if (i >= 0 && i < nbLignes && j >= 0 && j < nbColonnes 
-                        && !matriceCellules[i][j].estDevoilee()) 
-                        revelerCellule(i, j); // Appel récursif pour révéler les cellules voisines
+            System.out.println("test" + matriceCellules[ligne][colonne].isPresenceBombe());
+            System.out.println(matriceCellules[ligne][colonne].isPresenceBombe() == false);
+
+            if (matriceCellules[ligne][colonne].getNbBombesAdjacentes() == 0 && matriceCellules[ligne][colonne].isPresenceBombe() == false) {
+
+                for (int i = ligne - 1; i <= ligne + 1; i++) {
+                    for (int j = colonne - 1; j <= colonne + 1; j++) {
+
+                        if (i >= 0 && i < nbLignes && j >= 0 && j < nbColonnes
+                                && !matriceCellules[i][j].estDevoilee()) {
+                            revelerCellule(i, j); // Appel récursif pour révéler les cellules voisines
+                        }
                     }
                 }
             }
         }
     }
-
 
     public boolean getPresenceBombe(int i, int j) {
         return cellAtCoord(i, j).isPresenceBombe();
@@ -119,23 +122,19 @@ public Cellule[][] getMatriceCellules() {
             }
         }
         return true; // Toutes les cellules sans bombe sont révélées
-        
 
-}
- @Override
-public String toString() {
-    String result = "";
-    for (int i = 0; i < nbLignes; i++) {
-        for (int j = 0; j < nbColonnes; j++) {
-            result += "|" + matriceCellules[i][j].toString(); // Appel de toString() sur chaque cellule
-        }
-        result += "|\n"; // Retour à la ligne après chaque ligne
     }
-    return result;
-}
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                result += "|" + matriceCellules[i][j].toString(); // Appel de toString() sur chaque cellule
+            }
+            result += "|\n"; // Retour à la ligne après chaque ligne
+        }
+        return result;
+    }
 
 }
-
-
-    
-
